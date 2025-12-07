@@ -1,0 +1,12 @@
+{
+  "suitors": [
+    {
+      "id": "416e565f-8181-4fd6-9f65-deec010252cd",
+      "name": "Sebastian Ojeda",
+      "age": 28,
+      "occupation": "Musician",
+      "hobbies": "Playing guitar, Singing, Composing",
+      "likes": "Rock music, Live concerts"
+    }
+  ]
+}

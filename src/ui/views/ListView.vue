@@ -34,12 +34,12 @@ const route = useRoute();
 const service = new SuitorService();
 const suitors = ref([]);
 
-const loadSuitors = () => {
+const loadSuitors = async () => {
   const query = route.query.q;
   if (query) {
-    suitors.value = service.searchSuitors(query);
+    suitors.value = await service.searchSuitors(query);
   } else {
-    suitors.value = service.getAllSuitors();
+    suitors.value = await service.getAllSuitors();
   }
 };
 

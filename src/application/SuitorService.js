@@ -1,21 +1,21 @@
-import { LocalStorageSuitorRepository } from '../infrastructure/LocalStorageSuitorRepository';
+import { ApiSuitorRepository } from '../infrastructure/ApiSuitorRepository';
 import { Suitor } from '../domain/Suitor';
 
 export class SuitorService {
   constructor() {
-    this.repository = new LocalStorageSuitorRepository();
+    this.repository = new ApiSuitorRepository();
   }
 
-  registerSuitor(data) {
+  async registerSuitor(data) {
     const suitor = new Suitor(data);
-    this.repository.save(suitor);
+    await this.repository.save(suitor);
   }
 
-  getAllSuitors() {
-    return this.repository.getAll();
+  async getAllSuitors() {
+    return await this.repository.getAll();
   }
 
-  searchSuitors(query) {
-    return this.repository.findByName(query);
+  async searchSuitors(query) {
+    return await this.repository.findByName(query);
   }
 }

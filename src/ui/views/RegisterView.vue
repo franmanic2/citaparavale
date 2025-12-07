@@ -50,9 +50,9 @@ const form = reactive({
   likes: ''
 });
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
   // Convert hobbies string to array if needed, keeping simple for now
-  service.registerSuitor({ ...form });
+  await service.registerSuitor({ ...form });
   alert('¡Registro exitoso! Buena suerte.');
   router.push('/lista');
 };
