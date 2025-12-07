@@ -78,6 +78,7 @@ a {
   border: 1px solid transparent;
   border-radius: 8px;
   transition: all 0.3s ease;
+  color: var(--color-text);
 }
 
 .form-input:focus {

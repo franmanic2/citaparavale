@@ -29,6 +29,21 @@
         <textarea v-model="form.likes" class="form-input" rows="3" placeholder="Qué te apasiona..."></textarea>
       </div>
 
+      <div class="form-group">
+        <label class="form-label">¿Qué esperas de una relación con Vale?</label>
+        <textarea v-model="form.expectations" class="form-input" rows="3" placeholder="Tus expectativas..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Instagram</label>
+        <input v-model="form.instagram" class="form-input" placeholder="@usuario">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Tu Foto</label>
+        <input type="file" @change="handleFileUpload" class="form-input" accept="image/*">
+      </div>
+
       <button type="submit" class="btn-primary full-width">Registrarme</button>
     </form>
   </div>
@@ -47,8 +62,22 @@ const form = reactive({
   age: '',
   occupation: '',
   hobbies: '',
-  likes: ''
+  likes: '',
+  expectations: '',
+  instagram: '',
+  photo: ''
 });
+
+const handleFileUpload = (event) => {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      form.photo = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+};
 
 const handleSubmit = async () => {
   // Convert hobbies string to array if needed, keeping simple for now

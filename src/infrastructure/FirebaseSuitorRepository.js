@@ -14,6 +14,9 @@ export class FirebaseSuitorRepository {
         occupation: suitor.occupation,
         hobbies: suitor.hobbies,
         likes: suitor.likes,
+        expectations: suitor.expectations || '',
+        instagram: suitor.instagram || '',
+        photo: suitor.photo || '',
         // We let Firestore generate the ID or use the one provided, 
         // usually for new docs we let Firestore handle IDs but since we have UUIDs:
         externalId: suitor.id 
@@ -39,7 +42,10 @@ export class FirebaseSuitorRepository {
           age: data.age,
           occupation: data.occupation,
           hobbies: data.hobbies,
-          likes: data.likes
+          likes: data.likes,
+          expectations: data.expectations,
+          instagram: data.instagram,
+          photo: data.photo
         }));
       });
       return suitors;
