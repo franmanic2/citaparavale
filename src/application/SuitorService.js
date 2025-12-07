@@ -1,9 +1,14 @@
-import { ApiSuitorRepository } from '../infrastructure/ApiSuitorRepository';
+// import { ApiSuitorRepository } from '../infrastructure/ApiSuitorRepository';
+import { FirebaseSuitorRepository } from '../infrastructure/FirebaseSuitorRepository';
+// import { LocalStorageSuitorRepository } from '../infrastructure/LocalStorageSuitorRepository';
 import { Suitor } from '../domain/Suitor';
 
 export class SuitorService {
   constructor() {
-    this.repository = new ApiSuitorRepository();
+    // CAMBIAR AQUI EL REPOSITORIO QUE QUIERAS USAR
+    // this.repository = new ApiSuitorRepository(); // Para json-server local
+    // this.repository = new LocalStorageSuitorRepository(); // Para solo local browser
+    this.repository = new FirebaseSuitorRepository(); // Para Producción (Firebase)
   }
 
   async registerSuitor(data) {
@@ -12,7 +17,7 @@ export class SuitorService {
   }
 
   async getAllSuitors() {
-    return await this.repository.getAll();
+    return await this.repository.getAll(); // Ensure async is handled even for sync repos
   }
 
   async searchSuitors(query) {

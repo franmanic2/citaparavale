@@ -7,6 +7,14 @@
       "occupation": "Musician",
       "hobbies": "Playing guitar, Singing, Composing",
       "likes": "Rock music, Live concerts"
+    },
+    {
+      "id": "549408c6-ebab-417a-9df5-4b41e2404b07",
+      "name": "Sebastian Quide",
+      "age": 19,
+      "occupation": "Programador",
+      "hobbies": "Programar",
+      "likes": "Soy Gay"
     }
   ]
 }

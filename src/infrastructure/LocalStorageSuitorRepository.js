@@ -3,13 +3,17 @@ import { Suitor } from '../domain/Suitor';
 const STORAGE_KEY = 'suitors_registry';
 
 export class LocalStorageSuitorRepository {
-  save(suitor) {
-    const suitors = this.getAll();
-    suitors.push(suitor);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(suitors));
+  async save(suitor) {
+    // Simulate async for interface consistency
+    return new Promise(resolve => {
+      const suitors = this.getAllSync();
+      suitors.push(suitor);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(suitors));
+      resolve();
+    });
   }
 
-  getAll() {
+  getAllSync() {
     const data = localStorage.getItem(STORAGE_KEY);
     if (!data) return [];
     try {
@@ -20,11 +24,15 @@ export class LocalStorageSuitorRepository {
     }
   }
 
-  findByName(name) {
+  async getAll() {
+    return Promise.resolve(this.getAllSync());
+  }
+
+  async findByName(name) {
     if (!name) return [];
-    const suitors = this.getAll();
-    return suitors.filter(s => 
+    const suitors = this.getAllSync();
+    return Promise.resolve(suitors.filter(s => 
       s.name.toLowerCase().includes(name.toLowerCase())
-    );
+    ));
   }
 }
