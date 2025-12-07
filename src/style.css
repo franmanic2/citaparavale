@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 
 :root {
-  --font-main: "Outfit", sans-serif;
-  --color-bg: #ffffff;
-  --color-surface: #f9f9f9;
-  --color-text: #1a1a1a;
-  --color-subtext: #888888;
-  --color-accent: #ff4757; /* Vibrant Valentine Red */
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --font-main: 'Outfit', sans-serif;
+  --color-bg: #121212;
+  --color-surface: #1e1e1e;
+  --color-text: #e0e0e0;
+  --color-subtext: #a0a0a0;
+  --color-accent: #ff4757;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 * {
@@ -82,7 +82,7 @@ a {
 
 .form-input:focus {
   outline: none;
-  background: #fff;
+  background: var(--color-surface);
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1);
 }

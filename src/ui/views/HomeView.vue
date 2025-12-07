@@ -45,8 +45,9 @@ const handleSearch = () => {
   margin-bottom: 3rem;
   font-weight: 800;
   line-height: 1.1;
-  background: linear-gradient(45deg, #1a1a1a, #555);
+  background: linear-gradient(45deg, #ffffff, #ff4757);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -62,8 +63,9 @@ const handleSearch = () => {
   font-size: 1.2rem;
   border-radius: 50px;
   border: 1px solid #ddd;
-  background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   transition: all 0.3s;
 }
 

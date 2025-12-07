@@ -64,10 +64,10 @@ watch(() => route.query.q, loadSuitors);
 }
 
 .card {
-  background: white;
+  background: var(--color-surface);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
   transition: transform 0.3s;
   border: 1px solid transparent;
 }
@@ -115,7 +115,7 @@ watch(() => route.query.q, loadSuitors);
 .likes {
   margin-top: 1rem;
   font-style: italic;
-  color: #666;
+  color: var(--color-subtext);
 }
 
 .empty-state {
